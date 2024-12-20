@@ -5,7 +5,7 @@ namespace Ging1991.Persistencia.Lectores {
 
 	public abstract class Lector {
 
-		protected readonly string direccion;
+		protected string direccion;
 		public enum Tipo {STREAM, RECURSO}
 		protected Tipo tipo;
 
