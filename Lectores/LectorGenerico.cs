@@ -41,6 +41,14 @@ namespace Ging1991.Persistencia.Lectores {
 		}
 
 
+		public void Guardar() {
+			if (tipo == Tipo.STREAM)
+				GuardarHaciaStream(JsonUtility.ToJson(dato));
+			else
+				Debug.LogWarning("Un lector de recursos no puede guardar. Use un lector de Stream.");
+		}
+
+
 		public void InicializarDesdeRecursos(string direccion) {
 			string datos = LeerDesdeRecursos(direccion);
 			GuardarHaciaStream(datos);
