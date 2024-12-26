@@ -20,6 +20,11 @@ namespace Ging1991.Persistencia.Lectores {
 		}
 
 
+		public void EliminarDatos() {
+			File.Delete(direccion);
+		}
+
+
 		protected string LeerDesdeStream() {
 			return File.ReadAllText(direccion);
 		}
