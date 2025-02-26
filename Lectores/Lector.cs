@@ -19,27 +19,22 @@ namespace Ging1991.Persistencia.Lectores {
 			return File.Exists(direccion);
 		}
 
-
 		public void EliminarDatos() {
 			File.Delete(direccion);
 		}
-
 
 		protected string LeerDesdeStream() {
 			return File.ReadAllText(direccion);
 		}
 
-		
 		protected void GuardarHaciaStream(string contenido) {
 			File.WriteAllText(direccion, contenido);
 		}
-
 
 		protected string LeerDesdeRecursos(string direccion) {
 			TextAsset recurso = (TextAsset) Resources.Load(direccion, typeof(TextAsset));
 			return recurso.text;
 		}
-
 
 	}
 

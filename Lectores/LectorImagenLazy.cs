@@ -14,7 +14,6 @@ namespace Ging1991.Persistencia.Lectores {
 			this.direccionCarpeta = direccionCarpeta;
 		}
 
-
 		public Sprite GetImagen (string nombre) {
 
 			if (!mapaImagenes.ContainsKey(nombre)) {
@@ -26,11 +25,9 @@ namespace Ging1991.Persistencia.Lectores {
 			return mapaImagenes[nombre];
 		}
 
-
 		public static Sprite LeerImagen(string direccion) {
 			return (Sprite) Resources.Load(direccion, typeof(Sprite));
 		}
-
 
 	}
 

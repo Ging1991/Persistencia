@@ -15,7 +15,6 @@ namespace Ging1991.Persistencia.Lectores {
 			}
 		}
 
-
 		public T Leer() {
 			if (dato == null) {
 				if (tipo == Tipo.STREAM) {
@@ -27,11 +26,9 @@ namespace Ging1991.Persistencia.Lectores {
 			return dato;
 		}
 
-
 		public void Descartar() {
 			dato = Leer();
 		}
-
 
 		public void Guardar(T dato) {
 			if (tipo == Tipo.STREAM)
@@ -40,7 +37,6 @@ namespace Ging1991.Persistencia.Lectores {
 				Debug.LogWarning("Un lector de recursos no puede guardar. Use un lector de Stream.");
 		}
 
-
 		public void Guardar() {
 			if (tipo == Tipo.STREAM)
 				GuardarHaciaStream(JsonUtility.ToJson(dato));
@@ -48,12 +44,10 @@ namespace Ging1991.Persistencia.Lectores {
 				Debug.LogWarning("Un lector de recursos no puede guardar. Use un lector de Stream.");
 		}
 
-
 		public void InicializarDesdeRecursos(string direccion) {
 			string datos = LeerDesdeRecursos(direccion);
 			GuardarHaciaStream(datos);
 		}
-
 
 	}
 

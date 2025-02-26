@@ -6,13 +6,11 @@ namespace Ging1991.Persistencia.Lectores {
 		
 		public LectorListaEnteros(string direccion, Tipo tipo, string inicializacion = "") : base(direccion, tipo, inicializacion) {}
 		
-		
 		public  void Guardar(List<int> valor) {
 			Dato dato = new Dato();
 			dato.valor = valor;
 			Guardar(dato);
 		}
-
 
 		[System.Serializable]
 		public class Dato {
@@ -20,7 +18,6 @@ namespace Ging1991.Persistencia.Lectores {
 			public List<int> valor;
 
 		}
-
 
 	}
 
