@@ -16,7 +16,6 @@ namespace Ging1991.Persistencia.Lectores {
 			return instancia;
 		}
 
-
 		private LectorErrores() {
 			DireccionStream direccion = new DireccionStream("AUDITORIA", "ERRORES.json");
 			lectorInterno = new LectorInterno(direccion.Generar());
@@ -24,7 +23,6 @@ namespace Ging1991.Persistencia.Lectores {
 			if (!lectorInterno.ExistenDatos())
 				lectorInterno.Guardar(new DatoLista());
 		}
-
 
 		public void Guardar(string mensaje) {
 			Debug.LogError(mensaje);
@@ -38,18 +36,15 @@ namespace Ging1991.Persistencia.Lectores {
 			lectorInterno.Guardar(datoLista);
 		}
 
-
 		public List<Dato> Leer() {
 			return lectorInterno.Leer().lista;
 		}
-
 
 		private class LectorInterno : LectorGenerico<DatoLista> {
 
 			public LectorInterno(string direccion) : base(direccion, Tipo.STREAM) {}
 
 		}
-
 		
 		[System.Serializable]
 		public class DatoLista {
@@ -58,7 +53,6 @@ namespace Ging1991.Persistencia.Lectores {
 
 		}
 
-
 		[System.Serializable]
 		public class Dato {
 
@@ -66,7 +60,6 @@ namespace Ging1991.Persistencia.Lectores {
 			public string mensaje;
 
 		}
-
 	
 	}
 
